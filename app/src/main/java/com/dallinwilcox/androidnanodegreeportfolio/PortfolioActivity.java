@@ -2,6 +2,7 @@ package com.dallinwilcox.androidnanodegreeportfolio;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -92,7 +93,11 @@ public class PortfolioActivity extends Activity {
     }
     private void launchPopularMovies()
     {
-        toaster(R.string.popular_movies);
+//        referenced http://www.devlper.com/2010/08/launching-external-applications-in-android/
+        Intent intent =
+        getPackageManager().getLaunchIntentForPackage("com.dallinwilcox.popularmovies");
+         startActivity(intent);
+
     }
 
     private void launchScoresApp()
